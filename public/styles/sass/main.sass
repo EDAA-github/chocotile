@@ -1,0 +1,156 @@
+@import 'base'
+@import 'userWidget'
+
+$rhombSize: 500px
+
+$headerTitleClr: #a70000
+$headerAuthorClr: darkred
+
+$rhombOverlay: rgba(146, 146, 146, 0.71)
+
+$rhombBack1: #FFBA75
+$rhombBack2: #FEAC58
+$rhombBack3: #FF9A36
+
+
+body
+  display: flex
+  flex-direction: column
+
+  h1.title
+    display: block
+    margin: 7vh auto 0 auto
+
+    font: 400 6em $fnt_Arciform
+    text-align: center
+    letter-spacing: 0.2em
+    color: $headerTitleClr
+  h2.author
+    display: block
+    margin: 30px auto 5vh auto
+    font: 100 2em $fnt_RobotoLight
+    text-align: center
+    letter-spacing: 0.2em
+    color: $headerAuthorClr
+
+  div.main_row
+    display: flex
+    align-items: center
+    justify-content: space-around
+    /* rhomb container */
+    div.main_row_item
+      width: $rhombSize
+      height: $rhombSize
+      div.rhomb
+
+        /* inner div */
+        a.main_row_item_content
+          display: flex
+          align-items: center
+          justify-content: center
+          background-position: center
+          background-size: cover
+          background-repeat: no-repeat
+          cursor: pointer
+          div.rhomb_shade
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 100%
+            height: 100%
+            position: relative
+            &:before
+              position: absolute
+              display: block
+              content: ''
+              width: 150%
+              height: 150%
+              box-sizing: border-box
+              border: 4px solid $rhombOverlay
+              transform: rotate(45deg)
+              transition: .5s
+              z-index: 2
+            &:after
+              position: absolute
+              display: block
+              content: ''
+              width: 100%
+              height: 100%
+              background-color: $rhombOverlay
+              transform: rotate(45deg)
+              transition: .5s
+              z-index: 2
+            span.rhombTitle
+              color: white
+              font-family: $fnt_RobotoReg
+              font-size: 1.5em
+              letter-spacing: 0.1em
+              border-bottom: 2px solid $headerAuthorClr
+              padding: 0 5px
+              z-index: 3
+          &:hover
+            div.rhomb_shade:after
+              width: 40%
+              height: 40%
+            div.rhomb_shade:before
+              width: 45%
+              height: 45%
+
+
+@media only screen and (max-width: 1520px)
+  $new_registerSize: 400px
+  body
+    div.main_row
+      div.rhomb_container
+        width: $new_registerSize
+        height: $new_registerSize
+        left: calc(#{50%} - #{$new_registerSize/2})
+        top: calc(#{50%} - #{$new_registerSize/2})
+
+@media only screen and (max-width: 1220px)
+  $new_registerSize: 300px
+  body
+    div.main_row
+      div.rhomb_container
+        width: $new_registerSize
+        height: $new_registerSize
+        left: calc(#{50%} - #{$new_registerSize/2})
+        top: calc(#{50%} - #{$new_registerSize/2})
+
+@media only screen and (max-width: 1060px)
+  body
+    div.user_container
+      position: absolute
+      left: calc(50% - #{$user_width/2})
+    h1.title
+      margin-top: 200px
+
+@media only screen and (max-width: 910px)
+  $new_registerSize: 200px
+  body
+    div.main_row
+      div.rhomb_container
+        width: $new_registerSize
+        height: $new_registerSize
+        left: calc(#{50%} - #{$new_registerSize/2})
+        top: calc(#{50%} - #{$new_registerSize/2})
+
+@media only screen and (max-width: 630px)
+  $new_registerSize: 300px
+  body
+    h1.title
+      font-size: 3.5em
+    h2.author
+      font-size: 1.5em
+
+    div.main_row
+      flex-direction: column
+      div.rhomb_container
+        width: $new_registerSize
+        height: $new_registerSize
+        margin-bottom: 10px
+        left: calc(#{50%} - #{$new_registerSize/2})
+        top: calc(#{50%} - #{$new_registerSize/2})
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chocotile">
+  <title>CHOCOTILE</title>
+  <link rel="stylesheet" href="/styles/css/feed.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="page-preloader"></div>
+
+<div class="back-image"></div>
+
+
+<div class="page">
+    {{>header}}
+
+    <main class="tile-container">
+        <h6>{{feed.title}}</h6>
+        <div class="feed">
+            <p>
+                {{{feed.body}}}
+            </p>
+        </div>
+        <div class="features">
+            <a href="{{feed.url}}" class="open clearA" target="_blank">Вiдкрити на <span style="background-image: url('{{feed.icon}}')"></span></a>
+            <div class="pay" >Просунути новину <span></span></div>
+        </div>
+        <div class="controls">
+            <div class="no control_button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 21.9 21.9">
+                <path d="M14.1,11.3c-0.2-0.2-0.2-0.5,0-0.7l7.5-7.5c0.2-0.2,0.3-0.5,0.3-0.7s-0.1-0.5-0.3-0.7l-1.4-1.4C20,0.1,19.7,0,19.5,0  c-0.3,0-0.5,0.1-0.7,0.3l-7.5,7.5c-0.2,0.2-0.5,0.2-0.7,0L3.1,0.3C2.9,0.1,2.6,0,2.4,0S1.9,0.1,1.7,0.3L0.3,1.7C0.1,1.9,0,2.2,0,2.4  s0.1,0.5,0.3,0.7l7.5,7.5c0.2,0.2,0.2,0.5,0,0.7l-7.5,7.5C0.1,19,0,19.3,0,19.5s0.1,0.5,0.3,0.7l1.4,1.4c0.2,0.2,0.5,0.3,0.7,0.3  s0.5-0.1,0.7-0.3l7.5-7.5c0.2-0.2,0.5-0.2,0.7,0l7.5,7.5c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l1.4-1.4c0.2-0.2,0.3-0.5,0.3-0.7  s-0.1-0.5-0.3-0.7L14.1,11.3z"/>
+            </svg></div>
+            <div class="yes control_button"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26">
+                <path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"/>
+            </svg></div>
+        </div>
+    </main>
+
+</div>
+
+<script src="/scripts/jquery-3.2.1.min.js"></script>
+<!--<script src="/scripts/baseFeeds.js"></script>-->
+<script src="/scripts/preloaders.js"></script>
+<script src="https://api.fondy.eu/static_common/v1/checkout/ipsp.js"></script>
+<script src="/scripts/feedScript.js"></script>
+
+
+</body>
+</html>
+

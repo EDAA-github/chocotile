@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Chocotile">
+  <title>CHOCOTILE</title>
+  <link rel="stylesheet" href="/styles/css/main.css">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="page-preloader"></div>
+<div class="back-image"></div>
+
+
+<div class="page">
+    {{>header}}
+    <main class="tile-container">
+        <a class="tile-item" href="/category/recommends">
+            <div class="tile-item-back" style="background-image: url('assets/images/cat/lion.jpg')">
+            </div>
+            <div class="tile-item-content" style="color: gold">
+                EDAA рекомендує
+            </div>
+        </a>
+        <a class="tile-item" href="/category/best">
+            <div class="tile-item-back" style="background-image: url('assets/images/cat/best.jpg')">
+            </div>
+            <div class="tile-item-content">
+                Найкраще
+            </div>
+        </a>
+        {{#each cats}}
+            <a class="tile-item" href="/category/{{this.id}}">
+                <div class="tile-item-back" style="background-image: url('{{this.image}}')">
+                </div>
+                <div class="tile-item-content">
+                    {{this.name}}
+                </div>
+            </a>
+        {{/each}}
+    </main>
+
+</div>
+
+<script src="scripts/jquery-3.2.1.min.js"></script>
+<script src="scripts/base.js"></script>
+<script src="scripts/preloaders.js"></script>
+
+
+</body>
+</html>
+

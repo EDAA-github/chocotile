@@ -1,0 +1,28 @@
+<div class="user_container">
+  <div class="user rhomb_container">
+    <!-- for relative position for rhomb-content -->
+    <div class="rhomb_wrapper">
+      <div class="rhomb rhomb_user">
+        <div class="user_content rhomb_content" style="background-image: url('/assets/images/ava.png')">
+          <div class="bottom_border"></div>
+          {{#if isLogged}}
+            <a class="rhomb_shade user_register clearA" href="/profile">
+              <span  class="rhombTitle">ПРОФИЛЬ</span>
+            </a>
+            <a class="rhomb_shade user_login clearA" href="/logout">
+              <span  class="rhombTitle">ВЫЙТИ</span>
+            </a>
+          {{else}}
+            <a class="rhomb_shade user_register clearA" href="/register">
+              <span  class="rhombTitle">РЕГИСТРАЦИЯ</span>
+            </a>
+            <a class="rhomb_shade user_login clearA" href="/login">
+              <span  class="rhombTitle">ВХОД</span>
+            </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hide"></div>
+</div>

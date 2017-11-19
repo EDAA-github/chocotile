@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Nice Nail">
+  <title>Nice Nail</title>
+  <link rel="stylesheet" href="/styles/css/profile.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="particles-js"></div>
+
+{{>menu}}
+{{>userWidget}}
+<header class="profile_header page_item"> ПРОФИЛЬ </header>
+
+<main id="profile" class="page_item">
+  <div class="profile_info">
+    <div class="profile_image" style="background-image: url('/assets/images/ava.png')"></div>
+    <div class="profile_data">
+      <form action="" id="name"><input type="text" value="{{name}}" disabled><div class="submit"></div></form>
+      <form action="" id="number"><input type="text" value="{{number}}" disabled><div class="submit"></div></form>
+    </div>
+  </div>
+  <div id="profile_user_orders"></div>
+</main>
+
+<script src="scripts/jquery-3.2.1.min.js"></script>
+<script src="scripts/particles.min.js"></script>
+<script src="scripts/background.js"></script>
+<script src="scripts/nice-alert.js"></script>
+<script src="scripts/profile.js"></script>
+
+</body>
+</html>

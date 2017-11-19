@@ -1,0 +1,231 @@
+@import 'reset'
+@import 'common'
+
+.clearA
+  outline: none
+  &:link, &:visited, &:active
+    text-decoration: none
+    color: white
+    outline: none
+
+/* some item in body */
+.page_item
+  position: relative
+  z-index: 2
+
+/* main page content */
+div.page
+  position: relative
+  z-index: 2
+  overflow: hidden
+
+div#page-preloader
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: white
+  background-image: url('/assets/images/pre/0.svg')
+  background-repeat: no-repeat
+  background-position: center
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  width: 100vw
+  height: 100vh
+  z-index: 100
+  transition: .5s
+  /* for hide animation */
+  visibility: visible
+  opacity: 1
+  &.done
+    opacity: 0
+    visibility: hidden
+
+div.back-image
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100vw
+  height: 100vh
+  z-index: 1
+  background-color: $clr_mainBack
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
+
+header.page-header
+  a
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    //font: 400 2em $fnt_RobotoReg
+    font: 100 2em $fnt_RobotoLight
+    letter-spacing: 0.2em
+    width: 100%
+    background: $clr_mainHeader
+    min-height: 100px
+    padding: 0 10px
+    outline: none
+    &:link, &:visited, &:active
+      text-decoration: none
+      color: $clr_choco
+      outline: none
+    h1
+      display: flex
+      align-items: center
+      justify-content: space-between
+      span.brown
+        font-family: $fnt_RobotoMed
+        font-weight: 900
+      span.black
+        color: black
+        font-family: $fnt_RobotoLight
+        font-weight: 100
+      svg
+        width: 60px
+        height: 100px
+  h1, h3,h6
+    max-width: 800px
+    width: 80vw
+
+
+h6.category_name
+  //display: flex
+  //align-items: center
+  //justify-content: center
+  //margin: 0 auto
+  //max-width: 800px
+  text-align: center
+  color: white
+  font: 400 1.7em $fnt_RobotoReg
+  padding: 20px 0
+  letter-spacing: 0.1em
+  text-transform: uppercase
+
+  //text-align: center
+$tileHeight: 150px
+$tileWidth: 300px
+
+
+.tile-container
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  //max-width: 900px
+  max-width: 80vw
+  margin: 5px auto 0 auto
+  .tile-item
+    width: calc(33% - 10px)
+    margin: 5px
+    min-width: 250px
+    height: $tileHeight
+    position: relative
+    overflow: hidden
+    .isGood
+      position: absolute
+      z-index: 4
+      width: 10px
+      height: 10px
+      right: 10px
+      top: 10px
+      border-radius: 5px
+      box-shadow: 0 0 10px rgba(255,255,255,0.8)
+      &.good
+        background-color: darkgreen
+        box-shadow: 0 0 10px rgba(0,255,0,0.8)
+      &.bad
+        background-color: darkred
+        box-shadow: 0 0 10px rgba(255,0,0,0.8)
+    .vip
+      position: absolute
+      z-index: 4
+      //background: url('/assets/images/crown.png') no-repeat
+      //background-size: cover
+      width: 60px
+      height: 40px
+      svg
+        margin: 5px
+        width: 30px
+        height: 30px
+      //background: red
+    .statistic
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      position: absolute
+      height: 35px
+      width: 100%
+      bottom: -35px
+      background: rgba(217, 217, 217, 0.71)
+      transition: .3s
+      z-index: 3
+      svg
+        width: 30px
+        height: 30px
+        margin-right: 10px
+      div.stat-item
+        display: flex
+        align-items: center
+        margin: 0 10px
+        font: 400 1em $fnt_RobotoMed
+        color: black
+        &:last-child svg
+          width: 25px
+          height: 25px
+
+    .tile-item-content
+      position: absolute
+      top: 0
+      left: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      font: 400 1.1em $fnt_RobotoReg
+      letter-spacing: 0.1em
+      width: 100%
+      height: 100%
+      background-color: transparent
+      color: $clr_mainHeader
+      cursor: pointer
+      transition: .3s
+      z-index: 2
+    .tile-item-back
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+      transition: .3s
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
+      filter: grayscale(100%)
+    &:hover
+      .statistic
+        transform: translateY(-45px)
+      .tile-item-content
+        background-color: transparent
+      .tile-item-back
+        filter: grayscale(0%)
+  //&:hover
+
+
+
+@media only screen and (max-width: 600px)
+  header.page-header a
+    font-size: 1.5em
+    letter-spacing: 0.1em
+
+@media only screen and (max-width: 450px)
+  header.page-header a
+    font-size: 1.3em
+    h1
+      svg
+        min-width: 40px
+        min-height: 80px
