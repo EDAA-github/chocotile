@@ -1,7 +1,10 @@
-module.exports =
-{
-  host : "mysql.zzz.com.ua",
-  user : "choco_db",
-  password : "Chocotile123",
-  database : "kuropyatnik"
-};
+if (process.env.CLEARDB_DATABASE_URL) {
+  module.exports = process.env.CLEARDB_DATABASE_URL;
+} else {
+    module.exports = {
+        host: "localhost",
+        user: "root",
+        password: "mysql13",
+        database: "itrev17"
+    };
+}
